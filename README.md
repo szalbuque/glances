@@ -1,4 +1,6 @@
 # How to use GLANCES to monitor Linux load
+## Load average
+The Load Average in Linux is an essential metric to monitor the usage of system resources easily. Keeping the load average in check helps ensure that your system does not experience a crash or sluggish sessions.
 ## Lab configuration
 ### AWS EC2 instance (created with terraform, see [here](terraform/main.tf)):
 * t2.micro
@@ -61,4 +63,15 @@ It's possible to monitor a machine from another. But, I only could make it work 
 * On client:
 > glances -c SERVERIP<br>
 * It's necessary to open the port 61209 on the server's firewall.
+
+### GLANCES WEB
+* It's possible to publish Glances on the web.
+* On the server:
+> glances -w <br>
+* Open port 61208 on the server's firewall
+* On the browser:
+> http://SERVERIP:61208<br>
+
+![](images/glances-web.png)
+
 
